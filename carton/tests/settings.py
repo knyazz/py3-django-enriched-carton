@@ -14,7 +14,7 @@ INSTALLED_APPS = (
     'carton.tests',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
 )
