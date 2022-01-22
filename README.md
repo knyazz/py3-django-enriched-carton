@@ -78,9 +78,9 @@ include the URLs in your project ``urls.py``
     )
 
     # urls.py
-    urlpatterns = patterns('',
+    urlpatterns = [
         url(r'^shopping-cart/', include('shopping.urls')),
-    )
+    ]
 
 
 Assuming you have some products defined, you should be able to
