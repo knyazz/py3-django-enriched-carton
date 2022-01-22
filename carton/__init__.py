@@ -1,3 +1,9 @@
-"""django-carton is a simple and lightweight application for shopping carts and wish lists."""
+"""
+django-enriched-carton is a simple and lightweight application for shopping
+carts and wish lists.
+Forked of django-carton.
+Python3 and Django 3.2LTS are supported.
+"""
 
-__version__ = '1.2.1'
+__author__ = 'smirnov.ev'
+__version__ = '0.1.0'

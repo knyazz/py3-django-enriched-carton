@@ -16,7 +16,7 @@ class CartItem(object):
         self.price = Decimal(str(price))
 
     def __repr__(self):
-        return u'CartItem Object (%s)' % self.product
+        return f"CartItem Object ({self.product})"
 
     def to_dict(self):
         return {
@@ -42,7 +42,7 @@ class Cart(object):
         self._items_dict = {}
         self.session = session
         self.session_key = session_key or carton_settings.CART_SESSION_KEY
-            # If a cart representation was previously stored in session, then we
+        # If a cart representation was previously stored in session, then we
         if self.session_key in self.session:
             # rebuild the cart object from that serialized representation.
             cart_representation = self.session[self.session_key]
@@ -96,7 +96,7 @@ class Cart(object):
         if product in self.products:
             self._items_dict[product.pk].quantity += quantity
         else:
-            if price == None:
+            if price is None:
                 raise ValueError('Missing price when adding to cart')
             self._items_dict[product.pk] = CartItem(product, quantity, price)
         self.update_session()
@@ -165,7 +165,6 @@ class Cart(object):
             product_id = str(item.product.pk)
             cart_representation[product_id] = item.to_dict()
         return cart_representation
-
 
     @property
     def items_serializable(self):
